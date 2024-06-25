@@ -11,7 +11,7 @@ function Test() {
 export default Test;
 
 const STestHello = styled.div<{ hello: string }>(({ theme, hello }) => ({
-  ...theme.font.body1,
+  ...theme.fontStyle.body1,
   fontWeight: theme.font.semibold,
   boxShadow: theme.elevations.level3,
   position: 'relative',

@@ -6,9 +6,9 @@ import radius from './constants/radius';
 import spacing from './constants/spacing';
 
 const theme = {
+  ...font,
   color,
   elevations,
-  font,
   opacity,
   radius,
   spacing,

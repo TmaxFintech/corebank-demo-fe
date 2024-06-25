@@ -52,7 +52,7 @@ const letterSpacings = {
   xxxs: '0.0252em',
 };
 
-const textStyles = {
+const fontStyle = {
   display1: {
     fontSize: fontSizes.xxxxl,
     lineHeight: lineHeights.xxxl,
@@ -121,9 +121,9 @@ const textStyles = {
 };
 
 export default {
-  ...fontSizes,
-  ...fontWeights,
-  ...lineHeights,
-  ...letterSpacings,
-  ...textStyles,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+  fontStyle,
 };
