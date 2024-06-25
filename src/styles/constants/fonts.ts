@@ -1,4 +1,4 @@
-const fontSizes = {
+const fontSize = {
   xxxxl: '40px',
   xxxl: '36px',
   xxl: '32px',
@@ -14,14 +14,14 @@ const fontSizes = {
   xxxs: '12px',
 };
 
-const fontWeights = {
+const fontWeight = {
   bold: 700,
   semibold: 600,
   medium: 500,
   regular: 400,
 };
 
-const lineHeights = {
+const lineHeight = {
   xxxl: '56px',
   xxl: '50px',
   xl: '44px',
@@ -36,7 +36,7 @@ const lineHeights = {
   xxxs: '16px',
 };
 
-const letterSpacings = {
+const letterSpacing = {
   xxxxl: '-0.0282em',
   xxxl: '-0.027em',
   xxl: '-0.025em',
@@ -54,76 +54,76 @@ const letterSpacings = {
 
 const fontStyle = {
   display1: {
-    fontSize: fontSizes.xxxxl,
-    lineHeight: lineHeights.xxxl,
-    letterSpacings: letterSpacings.xxxxl,
+    fontSize: fontSize.xxxxl,
+    lineHeight: lineHeight.xxxl,
+    letterSpacing: letterSpacing.xxxxl,
   },
   display2: {
-    fontSize: fontSizes.xxxl,
-    lineHeight: lineHeights.xxl,
-    letterSpacings: letterSpacings.xxxl,
+    fontSize: fontSize.xxxl,
+    lineHeight: lineHeight.xxl,
+    letterSpacing: letterSpacing.xxxl,
   },
   h1: {
-    fontSize: fontSizes.xxl,
-    lineHeight: lineHeights.xl,
-    letterSpacings: letterSpacings.xxl,
+    fontSize: fontSize.xxl,
+    lineHeight: lineHeight.xl,
+    letterSpacing: letterSpacing.xxl,
   },
   h2: {
-    fontSize: fontSizes.xl,
-    lineHeight: lineHeights.l,
-    letterSpacings: letterSpacings.xl,
+    fontSize: fontSize.xl,
+    lineHeight: lineHeight.l,
+    letterSpacing: letterSpacing.xl,
   },
   h3: {
-    fontSize: fontSizes.l,
-    lineHeight: lineHeights.xxxm,
-    letterSpacings: letterSpacings.l,
+    fontSize: fontSize.l,
+    lineHeight: lineHeight.xxxm,
+    letterSpacing: letterSpacing.l,
   },
   h4: {
-    fontSize: fontSizes.xxxm,
-    lineHeight: lineHeights.xxm,
-    letterSpacings: letterSpacings.xxxm,
+    fontSize: fontSize.xxxm,
+    lineHeight: lineHeight.xxm,
+    letterSpacing: letterSpacing.xxxm,
   },
   h5: {
-    fontSize: fontSizes.xxm,
-    lineHeight: lineHeights.xm,
-    letterSpacings: letterSpacings.xxm,
+    fontSize: fontSize.xxm,
+    lineHeight: lineHeight.xm,
+    letterSpacing: letterSpacing.xxm,
   },
   h6: {
-    fontSize: fontSizes.xm,
-    lineHeight: lineHeights,
-    letterSpacings: letterSpacings.xm,
+    fontSize: fontSize.xm,
+    lineHeight: lineHeight,
+    letterSpacing: letterSpacing.xm,
   },
   body1: {
-    fontSize: fontSizes.m,
-    lineHeight: lineHeights.m,
-    letterSpacings: letterSpacings.m,
+    fontSize: fontSize.m,
+    lineHeight: lineHeight.m,
+    letterSpacing: letterSpacing.m,
   },
   body2: {
-    fontSize: fontSizes.s,
-    lineHeight: lineHeights.s,
-    letterSpacings: letterSpacings.s,
+    fontSize: fontSize.s,
+    lineHeight: lineHeight.s,
+    letterSpacing: letterSpacing.s,
   },
   body3: {
-    fontSize: fontSizes.xs,
-    lineHeight: lineHeights.xs,
-    letterSpacings: letterSpacings.xs,
+    fontSize: fontSize.xs,
+    lineHeight: lineHeight.xs,
+    letterSpacing: letterSpacing.xs,
   },
   caption1: {
-    fontSize: fontSizes.xxs,
-    lineHeight: lineHeights.xxs,
-    letterSpacings: letterSpacings.xxs,
+    fontSize: fontSize.xxs,
+    lineHeight: lineHeight.xxs,
+    letterSpacing: letterSpacing.xxs,
   },
   caption2: {
-    fontSize: fontSizes.xxxs,
-    lineHeight: lineHeights.xxxs,
-    letterSpacings: letterSpacings.xxxs,
+    fontSize: fontSize.xxxs,
+    lineHeight: lineHeight.xxxs,
+    letterSpacing: letterSpacing.xxxs,
   },
 };
 
 export default {
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  letterSpacing,
   fontStyle,
 };
