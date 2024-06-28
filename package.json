@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@wapl/core": "0.0.62-sas",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
