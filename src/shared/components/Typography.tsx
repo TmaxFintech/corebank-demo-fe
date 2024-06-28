@@ -1,10 +1,10 @@
-import { HTMLAttributes } from 'react';
-import styled from 'styled-components';
+import { HTMLAttributes } from "react";
+import styled from "styled-components";
 
 import fonts, {
   type FontStyleKey,
   type FontWeightKey,
-} from '../../styles/constants/fonts';
+} from "../../styles/constants/fonts";
 
 export interface TypographyProps
   extends HTMLAttributes<HTMLDivElement | HTMLHeadingElement> {
@@ -19,15 +19,15 @@ export interface TypographyProps
  */
 export default function Typography({
   fontStyle,
-  fontWeightKey = 'regular',
+  fontWeightKey = "regular",
   children,
   ...rest
 }: TypographyProps) {
-  const componentAs = StyledTypographyAsProp(fontStyle);
+  const componentAs = typographyElementMap[fontStyle];
   return (
     <StyledTypography
       {...rest}
-      componentAs={componentAs}
+      as={componentAs}
       fontStyle={fontStyle}
       fontWeightKey={fontWeightKey}
     >
@@ -36,30 +36,23 @@ export default function Typography({
   );
 }
 
-/**
- * fontStyle 에 맞게 Heading or Div로 컴포넌트를 나눕니다 - caption, body의 경우도 lineHeight의 적용을 위해 div로 처리합니다
- * @param key FontStyle
- * @returns  "h1" ~ "h6" or "div"
- */
-const StyledTypographyAsProp = (key: FontStyleKey) => {
-  switch (key) {
-    case 'h1':
-    case 'display1':
-      return 'h1';
-    case 'h2':
-    case 'display2':
-      return 'h2';
-    case 'h3':
-      return 'h3';
-    case 'h4':
-      return 'h4';
-    case 'h5':
-      return 'h5';
-    case 'h6':
-      return 'h6';
-    default:
-      return 'div';
-  }
+const typographyElementMap: Record<
+  FontStyleKey,
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div"
+> = {
+  display1: "h1",
+  display2: "h2",
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  body1: "div",
+  body2: "div",
+  body3: "div",
+  caption1: "div",
+  caption2: "div",
 };
 
 /**
@@ -68,24 +61,18 @@ const StyledTypographyAsProp = (key: FontStyleKey) => {
  * @returns styled-component에 들어갈 css를 반환합니다
  */
 const getTextStyles = (key: FontStyleKey) => {
-  const fontStyle = fonts.fontStyle[key];
+  const { fontSize, lineHeight, letterSpacing } = fonts.fontStyle[key];
   return `
-    font-size: ${fontStyle.fontSize};
-    line-height: ${fontStyle.lineHeight};
-    letter-spacing: ${fontStyle.letterSpacing};
+    font-size: ${fontSize};
+    line-height: ${lineHeight};
+    letter-spacing: ${letterSpacing};
   `;
 };
 
-interface StyledTypographyProps extends Omit<TypographyProps, 'children'> {
-  componentAs: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div';
-}
+interface StyledTypographyProps extends Omit<TypographyProps, "children"> {}
 
-const StyledTypography = styled.div.attrs<StyledTypographyProps>(
-  ({ componentAs }) => ({
-    as: componentAs,
-  })
-)`
+const StyledTypography = styled.div<StyledTypographyProps>`
   ${({ fontStyle }) => getTextStyles(fontStyle)};
-  font-weight: ${({ fontWeightKey = 'regular' }) =>
+  font-weight: ${({ fontWeightKey = "regular" }) =>
     fonts.fontWeight[fontWeightKey]};
 `;
