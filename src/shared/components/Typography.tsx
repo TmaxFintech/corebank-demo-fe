@@ -1,15 +1,15 @@
-import { HTMLAttributes } from "react";
-import styled from "styled-components";
+import { HTMLAttributes } from 'react';
+import styled from 'styled-components';
 
 import fonts, {
   type FontStyleKey,
   type FontWeightKey,
-} from "../../styles/constants/fonts";
+} from '../../styles/constants/fonts';
 
 export interface TypographyProps
   extends HTMLAttributes<HTMLDivElement | HTMLHeadingElement> {
   fontStyle: FontStyleKey;
-  fontWeight?: FontWeightKey;
+  fontWeightKey?: FontWeightKey;
   children: React.ReactNode;
 }
 
@@ -19,7 +19,7 @@ export interface TypographyProps
  */
 export default function Typography({
   fontStyle,
-  fontWeight = "regular",
+  fontWeightKey = 'regular',
   children,
   ...rest
 }: TypographyProps) {
@@ -29,7 +29,7 @@ export default function Typography({
       {...rest}
       componentAs={componentAs}
       fontStyle={fontStyle}
-      fontWeight={fontWeight}
+      fontWeightKey={fontWeightKey}
     >
       {children}
     </StyledTypography>
@@ -43,22 +43,22 @@ export default function Typography({
  */
 const StyledTypographyAsProp = (key: FontStyleKey) => {
   switch (key) {
-    case "h1":
-    case "display1":
-      return "h1";
-    case "h2":
-    case "display2":
-      return "h2";
-    case "h3":
-      return "h3";
-    case "h4":
-      return "h4";
-    case "h5":
-      return "h5";
-    case "h6":
-      return "h6";
+    case 'h1':
+    case 'display1':
+      return 'h1';
+    case 'h2':
+    case 'display2':
+      return 'h2';
+    case 'h3':
+      return 'h3';
+    case 'h4':
+      return 'h4';
+    case 'h5':
+      return 'h5';
+    case 'h6':
+      return 'h6';
     default:
-      return "div";
+      return 'div';
   }
 };
 
@@ -76,8 +76,8 @@ const getTextStyles = (key: FontStyleKey) => {
   `;
 };
 
-interface StyledTypographyProps extends Omit<TypographyProps, "children"> {
-  componentAs: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
+interface StyledTypographyProps extends Omit<TypographyProps, 'children'> {
+  componentAs: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div';
 }
 
 const StyledTypography = styled.div.attrs<StyledTypographyProps>(
@@ -86,5 +86,6 @@ const StyledTypography = styled.div.attrs<StyledTypographyProps>(
   })
 )`
   ${({ fontStyle }) => getTextStyles(fontStyle)};
-  font-weight: ${({ fontWeight }) => fontWeight};
+  font-weight: ${({ fontWeightKey = 'regular' }) =>
+    fonts.fontWeight[fontWeightKey]};
 `;
