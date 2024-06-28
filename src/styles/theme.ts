@@ -1,5 +1,5 @@
 import color from './constants/colors';
-import boxShadow from './constants/boxShadows';
+import elevation from './constants/elevation';
 import font from './constants/fonts';
 import opacity from './constants/opacity';
 import radius from './constants/radius';
@@ -8,7 +8,7 @@ import spacing from './constants/spacing';
 const theme = {
   ...font,
   color,
-  boxShadow,
+  elevation,
   opacity,
   radius,
   spacing,
