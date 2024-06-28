@@ -2,10 +2,10 @@ import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import Icon24Assets, {
   type Icon24AssetKey,
-} from '../assets/icons/icon24/Icon24Assets';
+} from '../../assets/icons/icon24/Icon24Assets';
 import Icon16Assets, {
   type Icon16AssetKey,
-} from '../assets/icons/icon16/Icon16Assets';
+} from '../../assets/icons/icon16/Icon16Assets';
 
 interface IconBaseProps extends HTMLAttributes<HTMLDivElement> {
   size: '24' | '16';
