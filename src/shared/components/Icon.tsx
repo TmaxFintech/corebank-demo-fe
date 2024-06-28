@@ -7,8 +7,10 @@ import Icon16Assets, {
   type Icon16AssetKey,
 } from '../../assets/icons/icon16/Icon16Assets';
 
+type IconSize = '24' | '16';
+
 interface IconBaseProps extends HTMLAttributes<HTMLDivElement> {
-  size: '24' | '16';
+  size: IconSize;
   icon: React.ReactNode;
 }
 
@@ -20,15 +22,9 @@ function IconBase({ size, icon, ...rest }: IconBaseProps) {
   );
 }
 
-const getIconBaseStyle = (size: IconBaseProps['size']) => {
-  return {
-    width: size === '24' ? '24px' : '16px',
-    height: size === '24' ? '24px' : '16px',
-  };
-};
-
 const StyledIconBase = styled.div<Pick<IconBaseProps, 'size'>>`
-  ${({ size }) => getIconBaseStyle(size)};
+  width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
   display: flex;
   justify-content: center;
   align-items: center;
