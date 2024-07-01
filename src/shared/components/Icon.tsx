@@ -30,7 +30,8 @@ const StyledIconBase = styled.div<Pick<IconBaseProps, 'size'>>`
   align-items: center;
 `;
 
-interface Icon24Props extends Omit<IconBaseProps, 'size' | 'icon'> {
+// 나중에 Styled(Icon24)와 같이 사용할 수 있도록 export
+export interface Icon24Props extends Omit<IconBaseProps, 'size' | 'icon'> {
   iconName: Icon24AssetKey;
 }
 
@@ -39,7 +40,8 @@ function Icon24({ iconName, ...rest }: Icon24Props) {
   return <IconBase {...rest} size="24" icon={<Icon />} />;
 }
 
-interface Icon16Props extends Omit<IconBaseProps, 'size' | 'icon'> {
+// 나중에 Styled(Icon16)와 같이 사용할 수 있도록 export
+export interface Icon16Props extends Omit<IconBaseProps, 'size' | 'icon'> {
   iconName: Icon16AssetKey;
 }
 
