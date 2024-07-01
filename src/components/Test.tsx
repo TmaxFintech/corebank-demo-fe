@@ -19,9 +19,7 @@ function Test() {
         <Badge color='primary' size='lg' bg={false}>
           99
         </Badge>
-        <Badge color='primary' size='lg' dot>
-          ㅁㄴㅇasdlkjasdljkasdlkasjdlaksdj
-        </Badge>
+
         <Badge color='primary' size='lg' bg={false}>
           99
         </Badge>
