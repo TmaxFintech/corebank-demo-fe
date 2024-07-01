@@ -92,7 +92,7 @@ const fontStyle = {
   },
   h6: {
     fontSize: fontSize.xm,
-    lineHeight: lineHeight,
+    lineHeight: lineHeight.m,
     letterSpacing: letterSpacing.xm,
   },
   body1: {
