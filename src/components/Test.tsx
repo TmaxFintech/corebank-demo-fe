@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { Illustration } from '../shared/components/Illustration';
 
 function Test() {
   return (
     <div>
       <STestHello hello={'world'}>T-MAX</STestHello>
+      <Illustration illustrationName='Charge' />
     </div>
   );
 }
