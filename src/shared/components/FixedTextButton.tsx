@@ -3,8 +3,9 @@ import radius from "../../styles/constants/radius";
 import colors from "../../styles/constants/colors";
 import fonts from "../../styles/constants/fonts";
 import spacing from "../../styles/constants/spacing";
+import { ButtonHTMLAttributes } from "react";
 
-interface FixedTextButtonProps {
+interface FixedTextButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>,'type'> {
     size : 'lg' | 'md' | 'sm';
     type : 'primary1' | 'primary2' | 'primary3' | 'secondary1' | 'action1';
     children? : React.ReactNode;
