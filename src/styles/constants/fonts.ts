@@ -21,6 +21,8 @@ const fontWeight = {
   regular: 400,
 };
 
+export type FontWeightKey = keyof typeof fontWeight;
+
 const lineHeight = {
   xxxl: '56px',
   xxl: '50px',
@@ -90,7 +92,7 @@ const fontStyle = {
   },
   h6: {
     fontSize: fontSize.xm,
-    lineHeight: lineHeight,
+    lineHeight: lineHeight.m,
     letterSpacing: letterSpacing.xm,
   },
   body1: {
@@ -119,6 +121,8 @@ const fontStyle = {
     letterSpacing: letterSpacing.xxxs,
   },
 };
+
+export type FontStyleKey = keyof typeof fontStyle;
 
 export default {
   fontSize,
