@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { type HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import Icon24Assets, {
   type Icon24AssetKey,
