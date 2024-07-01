@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import { Icon24, Icon16 } from './Icon';
 import theme from '../../styles/theme';
-import type { Icon24AssetKey } from '../../assets/icons/icon24/Icon24Assets';
-import type { Icon16AssetKey } from '../../assets/icons/icon16/Icon16Assets';
+import type { Icon24AssetKey } from '../../assets/icons/icon24/icon24Assets';
+import type { Icon16AssetKey } from '../../assets/icons/icon16/icon16Assets';
 
 type NotificationIconSize = '24' | '16';
 type NotificationType =
@@ -57,9 +57,9 @@ const StyledNotificationIcon = styled.div<{
   width: ${({ $size }) => `${$size}px`};
   height: ${({ $size }) => `${$size}px`};
   svg {
+    // Notification Icon의 경우 box size는 기존 icon과 동일하나 svg의 크기가 다름
     width: ${({ $size }) => ($size === '24' ? '20px' : '16px')};
     height: ${({ $size }) => ($size === '24' ? '20px' : '16px')};
-    color: ${({ theme }) => theme.color.common0};
     path:first-child {
       fill: ${({ $type }) => colorMap[$type]};
     }
