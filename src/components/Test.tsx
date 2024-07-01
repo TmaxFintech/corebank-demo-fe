@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import Charge from '../assets/illustration-40/Charge.svg?react';
-import chargeSrc from '../assets/illustration-40/Charge.svg';
+import { Illustration } from '../shared/components/Illustration';
 
 function Test() {
   return (
     <div>
       <STestHello hello={'world'}>T-MAX</STestHello>
-      <Charge width={60} height={60} />
-      <img src={chargeSrc} alt='' />
+      <Illustration illustrationName='Charge' />
     </div>
   );
 }
