@@ -1,4 +1,3 @@
-import { SVGProps } from 'react';
 import Charge from './Charge.svg?react';
 import DriverLicense from './DriverLicense.svg?react';
 import HistoryInquiry from './HistoryInquiry.svg?react';
