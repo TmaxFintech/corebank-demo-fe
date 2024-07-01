@@ -11,6 +11,9 @@ function App() {
       <hr />
       <Typography fontStyle="display1">Display1 TEXT</Typography>
       <Typography fontStyle="h3">H3 TEXT</Typography>
+      <Typography fontStyle="caption1" componentAs="span">
+        Caption1 as Span
+      </Typography>
     </ThemeProvider>
   );
 }
