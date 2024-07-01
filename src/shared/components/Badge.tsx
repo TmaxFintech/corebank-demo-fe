@@ -8,7 +8,15 @@ interface BadgeProps extends HTMLAttributes<HTMLElement> {
   dot?: boolean;
   componentAs?: string;
 }
-
+/**
+ *
+ * @param color 뱃지의 색상입니다 (default: neutral)
+ * @param bg - 배경이 있는지 유무 입니다 (default: true)
+ * @param size - 뱃지의 크기입니다 (default: md)
+ * @param dot - dot 타입인지 유무 (default: false)
+ * @param componentAs - 어떤 tag로 렌더링 할지 (default: span)
+ * @returns
+ */
 export default function Badge({
   color = 'neutral',
   bg = true,
