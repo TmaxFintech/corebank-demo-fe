@@ -23,11 +23,11 @@ const SIZES = {
 }
 
 const TYPES = {
-    primary1 : css`background-color : ${colors.primaryLight}; border : none; `,
-    primary2 : css`background-color : white; border : 1px solid ${colors.primaryNormal}; color : ${colors.turquoise30}; `,
-    primary3 : css`background-color : white; border : none; color : ${colors.turquoise30};`,
-    secondary1 : css`background-color : white; border : 1px solid ${colors.neutral70};`,
-    action1 : css`background-color : ${colors.turquoise90}; border : none; color : ${colors.common0};`,
+  primary1 : css`background-color : ${colors.primaryLight}; border : none;  --hover-shadow-color : ${colors.common100}; --hover-shadow-opacity : 0.04;`,
+  primary2 : css`background-color : white; border : 1px solid ${colors.primaryNormal}; color : ${colors.turquoise30}; --hover-color : ${colors.primaryLight}; --hover-shadow-color : ${colors.common0}; --hover-shadow-opacity : 0.88; `,
+  primary3 : css`background-color : white; border : none; color : ${colors.turquoise30}; --hover-shadow-color : ${colors.common0}; --hover-shadow-opacity : 0.88;`,
+  secondary1 : css`background-color : white; border : 1px solid ${colors.neutral70}; --hover-shadow-color : ${colors.common100}; --hover-shadow-opacity : 0.04;`,
+  action1 : css`background-color : ${colors.turquoise90}; border : none; color : ${colors.common0}; --hover-shadow-color : ${colors.common0}; --hover-shadow-opacity : 0.08;`,
 }
 
 function FixedTextButton ({size, type,children} : FixedTextButtonProps ) {
@@ -46,6 +46,29 @@ const StyledButton = styled.button<StyleProps>`
     ${(props) => props.$sizeStyle}
     ${(props) => props.$typeStyle}
     background-blend-mode : multiply;
+
+    &:hover {
+        background-color: var(--hover-color,white);
+    }
+
+    &::before {
+        content : '';
+        position: absolute;
+        top : 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--hover-shadow-color, white);
+        opacity: 0;
+        border-radius: ${radius.radius80};
+    }
+    &:hover::before {
+        opacity : var(--hover-shadow-opacity, 0);
+    }
+
+    & span {
+        position: relative;
+    }
 
   &:active {
     color : ${colors.turquoise30};
